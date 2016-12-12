@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+
   has_many :microposts, dependent: :destroy
   has_many :active_relationships, class_name:  "Relationship",
                                 foreign_key: "follower_id",
@@ -56,11 +57,11 @@ class User < ApplicationRecord
   end
 
 
-  # Activates an account.
+  # s an account.
   def activate
-     update_attribute(:activated,    true)
-     update_attribute(:activated_at, Time.zone.now)
-    #update_columns(activated: FILL_IN, activated_at: FILL_IN)
+     update_attribute(:activate,    true)
+     update_attribute(:activate_at, Time.zone.now)
+    #update_columns(d: FILL_IN, d_at: FILL_IN)
   end
 
   # Sends activation email.
