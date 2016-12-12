@@ -14,6 +14,7 @@ class UsersController < ApplicationController
     @user = User.find_by id: params[:id]
     @microposts = @user.microposts.paginate(page: params[:page])
     #redirect_to root_url and return unless FILL_IN
+
     unless @user
       flash[:danger] = t("flash.danger.invalid_user")
       redirect_to root_url
