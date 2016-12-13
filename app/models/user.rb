@@ -59,8 +59,8 @@ class User < ApplicationRecord
 
   # s an account.
   def activate
-     update_attribute(:activate,    true)
-     update_attribute(:activate_at, Time.zone.now)
+     update_attribute(:activated,    true)
+     update_attribute(:activated_at, Time.zone.now)
     #update_columns(d: FILL_IN, d_at: FILL_IN)
   end
 
